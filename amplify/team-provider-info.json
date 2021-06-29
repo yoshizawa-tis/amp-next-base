@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-yoshizawa-dev-40734-authRole",
+      "UnauthRoleArn": "arn:aws:iam::321735307426:role/amplify-yoshizawa-dev-40734-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::321735307426:role/amplify-yoshizawa-dev-40734-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-yoshizawa-dev-40734-deployment",
+      "UnauthRoleName": "amplify-yoshizawa-dev-40734-unauthRole",
+      "StackName": "amplify-yoshizawa-dev-40734",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:321735307426:stack/amplify-yoshizawa-dev-40734/8ea65d30-cf21-11eb-9e3d-0e64b831f3c9",
+      "AmplifyAppId": "d2h7vsscwydzdj"
+    },
+    "categories": {
+      "auth": {
+        "yoshizawa6c873ddf": {}
+      }
+    }
+  }
+}

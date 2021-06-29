@@ -1,0 +1,10 @@
+
+type Image @model {
+  id: ID!
+  name: String!
+  key: String!
+  uploadDate: String
+  createDate: String
+  tag1: [String]
+  tag2: [String]
+}

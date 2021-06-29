@@ -4,11 +4,11 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../conf/theme';
-import Layout from '../lib/layout/layout1';
+import Layout from '../lib/layout/layout2';
 
 import Amplify from 'aws-amplify'
 import awsconfig from '../src/aws-exports'
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignIn } from '@aws-amplify/ui-react';
 Amplify.configure(awsconfig)
 
 export default function MyApp(props: AppProps) {
@@ -24,7 +24,9 @@ export default function MyApp(props: AppProps) {
 
   return (
     <>
-      {/* <AmplifyAuthenticator> */}
+      <AmplifyAuthenticator>
+        <AmplifySignIn slot="sign-in" hideSignUp={true} />
+
         <React.Fragment>
           <Head>
             <title>My page</title>
@@ -38,7 +40,7 @@ export default function MyApp(props: AppProps) {
             </Layout>
           </ThemeProvider>
         </React.Fragment>
-      {/* </AmplifyAuthenticator> */}
+      </AmplifyAuthenticator>
     </>
   );
 }

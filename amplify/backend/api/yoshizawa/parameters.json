@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "yoshizawa",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authyoshizawa6c873ddf",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

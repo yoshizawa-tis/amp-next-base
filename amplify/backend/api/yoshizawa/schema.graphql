@@ -1,10 +1,39 @@
-
 type Image @model {
   id: ID!
+  code: String!
   name: String!
+  tags: [ImageTag] @connection(keyName: "byImage", fields: ["id"])
   key: String!
-  uploadDate: String
-  createDate: String
-  tag1: [String]
-  tag2: [String]
+}
+
+type ImageTag
+  @model
+  @key(name: "byTag", fields: ["tagId"])
+  @key(name: "byImage", fields: ["imageId"])
+{
+  id: ID!
+  code: String!
+  imageId: ID!
+  tagId: ID!
+  image: Image @connection(fields: ["imageId"])
+  tag: Tag @connection(fields: ["tagId"])
+}
+
+type Tag
+  @model
+  @key(name: "byCategory", fields: ["categoryId"])
+{
+  id: ID!
+  code: String!
+  categoryId: ID!
+  name: String!
+  category: Category @connection(fields: ["categoryId"])
+  users: [ImageTag] @connection(keyName: "byTag", fields: ["id"])
+}
+
+type Category @model {
+  id: ID!
+  code: String!
+  name: String!
+  tags: [Tag] @connection(keyName: "byCategory", fields: ["id"])
 }
